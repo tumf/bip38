@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem "version"
+gem "bitcoin"
+gem "scrypt"
+gem "ffi"
 
 group :development do
   gem 'pry'
@@ -8,7 +10,6 @@ group :development do
 end
 
 group :test, :development do
-  gem 'rake'
   gem 'childlabor'
   gem 'fakeweb'
   gem 'rspec'

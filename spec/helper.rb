@@ -3,6 +3,10 @@ $TESTING=true
 
 require 'simplecov'
 require 'coveralls'
+require 'bitcoin'
+require 'scrypt'
+require 'bip38'
+require 'rspec'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
@@ -11,8 +15,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 SimpleCov.start
 
 $:.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
-require 'bip38'
-require 'rspec'
 RSpec.configure do |config|
 end
 
@@ -29,7 +31,5 @@ def to_load_contents text
   allow(File).to receive(:read).and_return(text)
 end
 
-
 require 'coveralls'
 Coveralls.wear!
-
